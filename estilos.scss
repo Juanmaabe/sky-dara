@@ -1,0 +1,1665 @@
+////*FONTS*////
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+////****MEDIA-QUERIES****///
+@import "media-q";
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f4f4f4;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+////*****INDEX****////
+/*NAVBAR*/
+.menu{
+    background-color: #2E2E2E;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EC5538;
+    box-shadow: 5px 0 10px rgba(0,0,0,.6);
+    position: fixed;
+    z-index: 2;
+    
+
+    .logo{
+        color: white;
+        font-size: 35px;
+        padding: 0 80px;
+        font-weight: bold;
+        align-self: center;
+
+        img{
+            height: 60px;
+            align-self: center;
+            border-radius: 50%;
+        }
+    }
+
+    .menu_items{
+        display: flex;
+        list-style: none;
+        margin-right: 30px;
+
+        li{
+            border-radius: 3px;
+            margin: 0 5px;
+
+            a{
+                padding: 7px 13px;
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+                text-transform: uppercase;
+                color: white;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                transition: all 450ms ease;
+
+                &::after, 
+                &::before{
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    transition: width 40ms, opacity 30ms ease;
+                }
+            }
+
+            .link{
+                &::before,
+                &::after{
+                    height:0.1rem;
+                    bottom: -1px;
+                }
+            
+                &::before{
+                    width: 0;
+                    background-color:#EC5538;
+                }
+            
+                &::after{
+                    width:100%;
+                    border: 1px solid #EC5538;
+                    border-top: 0;
+                    opacity: 0;
+                }
+            
+                &:hover{
+                    color: #EC5538;
+            
+                    &::before{
+                        width: 0;
+                        animation: width 1500ms ease forwards;
+                    }
+            
+                    &::after{
+                        opacity:1;
+                    }
+                }
+
+            }
+
+        }
+    }
+    .btn_menu{
+        display:none;
+
+        .fa{
+
+            img{
+                height:40px;
+            }
+        }
+    }
+}
+/* @keyframes width{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 100%;
+    }
+    100%{
+        width: 70%;
+    }
+} */
+
+/*CAROUSEL*/
+#slider{
+    overflow: hidden;
+    
+
+    @keyframes slider{
+        0%{
+            left: 0;
+        }
+        20%{
+            left: 0;
+        }
+        25%{
+            left:-100%
+        }
+        45%{
+            left:-100%;
+        }
+        50%{
+            left:-200%;
+        }
+        70%{
+            left:-200%;
+        }
+        75%{
+            left: -300%;
+        }
+        95%{
+            left: -300%;
+        }
+        100%{
+            left: -400%;
+        }
+    }
+
+    figure{
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        animation: 20s slider infinite;
+
+        img{
+            width: 20%;
+            float: left;
+            height: 600px;
+            
+        }
+    }
+}
+
+/*HERO*/
+.hero{
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    background: url(./images/hero/photo-1492998680170-81f8863d8d2d.jpg) no-repeat center;
+    background-size: cover;
+
+    .container{
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        h1{
+            font-size: 60px;
+            letter-spacing: 0.2em;
+            margin: 0;
+
+            span{
+                border: 10px solid white;
+                padding: 6px 14px;
+                display: inline-block;
+            }
+        }
+
+        .hdown{
+            margin: 20px;
+            display: block;
+            font-size: 26px;
+            text-shadow: 0 0 10px black;
+        }
+
+        .btn{
+            color: white;
+            padding: 10px 24px;
+            font-size: 20px;
+            text-decoration: none;
+            background: black;
+            border-radius: 8px;
+            transition: 0.3s all;
+
+            &:hover{
+                opacity:0.8;
+                background-color: #EC5538;
+            }
+        }
+    }
+}
+
+/*SOBREMI*/
+.sobremi{
+    display: flex;
+    text-align: center;
+
+    img{
+        border-radius: 5px;
+        padding: 40px;
+    }
+
+    h2{ 
+        padding-top: 40px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    p{
+        padding-top: 60px;
+        padding-right: 20px;
+        font-size: 20px;
+    }
+
+    .boton{
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: black;
+        padding: 6px;
+        border-radius: 3px;
+        color: white;
+
+        &:hover{
+            opacity: 0.7;
+            background-color: #EC5538;
+        }
+    }
+}
+
+/*TRABAJOS*/
+.trabajos{
+    text-align: center;
+    background-color:lavenderblush;
+
+    h2{
+        text-transform: uppercase;
+        padding: 20px;
+        letter-spacing: 1px;
+    }
+
+    p{
+        margin-bottom: 20px;
+    }
+    
+    .variedad{
+        display: flex;
+
+        img{
+            height: 60px;
+            margin: 20px;;
+        }
+
+    }
+    
+    a{
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: black;
+        padding: 6px;
+        border-radius: 3px;
+        color: white;
+        margin-bottom: 20px;
+
+        &:hover{
+            opacity: 0.7;
+            background-color: #EC5538;
+            color: black;
+        }  
+    }
+}
+
+/*BANNER CONTACTAME*/
+.contactame{
+    height: 300px;
+    align-items: center;
+    text-align: center;
+    padding: 60px;
+    background: url(./images/sky/contactameIndex.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    .contactame_info{
+        height: 80px;
+        border-radius: 6px;
+        box-shadow: 0 10px 30px #000;
+        margin: 20px auto;
+        border: 1px solid #ffffff40;
+    }
+
+    .filtro{
+        -webkit-backdrop-filter:blur(15px);
+        backdrop-filter:blur(15px);
+        background-color: rgba(243,243,243,0.2);
+    }
+
+    a{
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: black;
+        padding: 6px;
+        border-radius: 3px;
+        color: white;
+        margin-bottom: 20px;
+
+        &:hover{
+            opacity: 0.7;
+            background-color: #EC5538;
+            color: black;
+        }
+    }
+    
+    
+}
+
+/*INFORMACION*/
+.informacion{
+    background-color: lavenderblush;
+    padding: 20px;
+    text-align: center;
+
+    h2{
+        text-transform: uppercase;
+        padding: 10px;
+    }
+}
+/*SECTION-BOTTOM*/
+#bottom{
+    background-color: white;
+
+    .row{
+        display: flex;
+        justify-content: space-between;
+
+        .col-md-2{
+            img{
+                display: inline-block;
+                height: 200px;
+                margin-left: 40px;
+                
+            }
+        }
+
+        .col-md-10{
+            margin-right: 60px;
+            margin-top: 10px;
+
+            ul{
+                list-style: none;
+                padding: 40px;
+
+                li{
+                    padding: 10px
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+
+}
+
+/*FOOTER*/
+#footer{
+    background: none repeat scroll 0 0 #2E2E2E;
+    border-top: 5px solid #EC5538;
+    height: 50px;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    
+    .copyright{
+        padding: 10px;
+        color: white;
+
+        a{
+            text-decoration: none;
+        }
+    }
+
+    .menunav{
+        ul{
+            display: flex;
+            list-style: none;
+            padding: 10px;
+            
+            a{
+                padding: 0 10px;
+                text-decoration: none;
+                font-size: 10px;
+                display: block;
+                text-transform: uppercase;
+                color: white;
+                cursor: pointer;
+                position: relative;
+
+                &:hover{
+                    background-color:maroon;
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+////****PAGE: SOBREMI****////
+.conociendome{
+    background: url(./images/hero/sakura.jpg);
+    background-size: cover;
+    margin: auto;
+    text-align: center;
+    padding: 80px;
+    color: white;
+
+        h1{
+            margin-top: 80px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 60px;
+        }   
+}
+
+/*PRESENTACION*/
+.presentacion{
+    display: flex;
+    padding: 20px;
+
+            img{
+                height: 600px;
+                margin-right: 20px;
+                border-radius: 6px;
+                box-shadow: rgba(0,0,0,0.7);
+            }
+
+            h2{
+                font-size: 30px;
+                padding: 20px;
+            }
+
+            p{
+                text-align: center;
+                padding: 20px;
+                font-size: 18px;
+                margin: 10px
+            }
+          
+}
+ 
+/*PILARES*/
+.pilares{
+    background: url(./images/hero/manodibujando.jfif);
+    background-size: cover;
+    height: 550px;
+    text-align: center;
+
+        .titulo{
+            padding: 60px;
+            color: black;
+
+                h2{
+                    text-transform: uppercase;
+                    font-size: 30px;
+                    margin: auto;
+                }
+
+                p{
+                    font-size: 18px;
+                    margin: auto;
+                    padding: 20px;
+                    font-weight: bold;
+                }
+        }
+
+        .lista{
+            ul{
+                display: inline-block;
+                list-style: none;
+                
+                li{
+                    padding: 20px;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color:black;
+
+                    &:hover{
+                        background-color:rgba(243,243,243,0.2);
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+}
+
+/*REDES SOCIALES*/
+.redes{
+    background-color: lavenderblush;
+    height: 500px;
+    text-align: center;
+    padding: 60px 20px;
+
+        .redes_top{
+            h2{
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .redes_bottom{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;;
+                
+                .red{
+                    padding: 10px;
+                    
+                        img{
+                            height: 160px;
+
+
+                            &:hover{
+                                transform: scale(1.3);
+                            }
+                        }
+                }
+            
+        }
+}
+
+        
+
+
+
+ 
+////****PAGE: PORTFOLIO****////
+.banner-portfolio{
+    background: url(./images/hero/portfolioFondo.jfif);
+    background-size: cover;
+    margin: auto;
+    text-align: center;
+    padding: 80px;
+    color: white;
+
+        h1{
+            margin-top: 80px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 60px;
+        }   
+}
+.titulo-proyectos{
+    background-color: lavenderblush;
+    text-align: center;
+    color: black;
+    
+        h2{
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        p{
+            padding: 10px;
+        }
+
+    .proyectos{
+        display: grid;
+        padding: 60px;
+        grid-template-columns: 250px 250px 250px;
+        grid-template-rows: auto;
+        justify-content: space-between;
+
+        img{
+            width: 200px;
+            height: 300px;
+            padding: 10px;
+
+            &:hover{
+                transform: scale(1.3);
+                transition: 500ms ease-in;
+            }
+        }
+    }
+
+    a{
+        display: inline-block;
+        background-color:black;
+        padding: 10px;
+        color: white;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover{
+            opacity: 0.3;
+            background-color: #2E2E2E;
+        }
+    }
+}
+
+
+
+
+
+
+////****PAGE: CONTACTO****////
+.banner{
+    background: url(./images/hero/contactofondo.jfif);
+    background-size: cover;
+    margin: auto;
+    text-align: center;
+    padding: 80px;
+    color: white;
+
+        h1{
+            margin-top: 80px;;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 60px;
+        }   
+}
+////*FORMULARIO*////
+.formulario{
+    height: 100vh;
+    background-color: lavenderblush;
+    text-align: center;
+
+        h2{
+            padding: 40px;
+            text-transform: uppercase;
+        }
+
+        .form{
+            width: 450px;
+            margin: auto;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            border-radius: 6px;
+
+                h3{
+                    color: white;
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
+
+                input, textarea{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 7px;
+                    box-sizing: border-box;
+                    font-size: 18px;
+                }
+
+                textarea{
+                    height: 150px;
+                }
+        }
+}
+
+.map{
+    margin-top: 80px;
+
+        iframe{
+            width: 800px;
+            height: 450px;
+            padding: 20px;
+        }
+}
+
+
+
+
+
+
+
+////****MEDIA QUERIES****////
+@media (max-width: 480px){
+////****INDEX****////    
+/*NAVBAR*/
+.menu{
+    background-color: #2E2E2E;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    
+
+    .logo{
+        color: white;
+        font-size: 25px;
+        padding: 0 30px;
+        font-weight: bold;
+        align-self: center;
+
+        img{
+            height: 60px;
+            align-self: center;
+            border-radius: 50%;
+        }
+    }
+
+    .menu_items{
+        position: fixed;
+        width: 100%;
+        height: calc(100%-65px);
+        background-color: #2E2E2E;
+        top: -100vh;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column;
+
+            li{
+                margin: 30px 0 0 0;
+                line-height: 30px;
+
+                &:hover{
+                    background: none;
+                }
+
+                a{
+                    font-size: 20px;
+                    color: white;
+                    font-weight: bold;
+
+                    &:hover{
+                        color: #EC5538;
+                    }
+                }
+            }
+        }
+
+    .btn_menu{
+        display:inline-flex;
+        padding-right: 3px;
+        
+    }
+    
+}
+/*SOBREMI*/
+.sobremi{
+    display: flex;
+    flex-direction: column;
+
+    a{
+        margin-bottom: 20px;;
+    }
+
+    p{
+        padding: 20px;
+    }
+}
+
+/*TRABAJOS*/
+.trabajos{
+
+    p{
+        padding: 20px;
+    }
+    
+    .variedad{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*INFORMACION*/
+.informacion{
+
+    iframe{
+        width:auto;
+    }
+}
+
+/*SECTION-BOTTOM*/
+#bottom{
+    .row{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 40px;
+
+        .col-md-2{
+            img{
+                display: inline-block;
+                align-items: center;
+                height: 80px;
+                padding-right: 60px;   
+            }
+            ul{
+                padding-left: 20px;
+                font-size: 12px;
+                
+                li{
+                    padding:5px;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+#footer{
+    height: 40px;
+    font-size: 8px;
+}
+
+
+////****SOBREMI****////
+/*PRESENTACION*/
+.presentacion{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+
+            img{
+                height: 400px;   
+            }
+          
+}
+ 
+/*PILARES*/
+.pilares{
+    background: url(./images/hero/manodibujando.jfif);
+    background-size: cover;
+    height: 550px;
+    text-align: center;
+
+        .titulo{
+                h2{
+                    font-size:25px;   
+                }
+
+                p{
+                    font-size: 16px;
+                }
+        }
+
+        .lista{
+            ul{
+                display: inline-block;
+                list-style: none;
+                
+                li{
+                    padding: 10px;
+                }
+            }
+        }
+
+}
+
+/*REDES SOCIALES*/
+.redes{
+    background-color: lavenderblush;
+    height: auto;;
+    text-align: center;
+    padding: 60px 20px;
+
+        .redes_top{
+            h2{
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .redes_bottom{
+            display: flex;
+            flex-direction: column;
+            
+        }
+}
+
+
+////****PORTFOLIO****////
+.banner-portfolio{
+    background: url(./images/hero/portfolioFondo.jfif);
+    background-size: cover;
+    margin: auto;
+    text-align: center;
+    padding: 80px;
+    color: white;
+
+        h1{
+            margin-top: 80px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 60px;
+        }   
+}
+.titulo-proyectos{
+    .proyectos{
+        display: flex;
+        flex-direction: column;
+    
+        img{
+            width: 300px;
+            height: 400px;
+            
+
+            &:hover{
+                transform: scale(1.25); 
+            }
+        }
+    }
+}
+
+////****CONTACTO****////
+/*FORMULARIO*/
+.formulario{
+    height: 1350px;
+   
+        .form{
+            width: 410px;
+        }
+}
+.map{
+    margin-top: 80px;
+
+        iframe{
+            width: 360px;
+            height: 500px;
+            padding: 20px;
+        }
+}
+}
+
+@media only screen and (min-width:481px)
+and (max-width: 768px){
+////****INDEX****////
+/*NAVBAR*/
+    .menu{
+        height: 70px;
+
+        .logo{
+            font-size: 25px;
+            padding: 0 20px;
+        }
+    
+        .menu_items{
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+            
+    
+                li{
+                    margin: 7px 0 0 0;
+                    line-height: 40px;
+    
+                    a{
+                        font-size: 14px;
+                        padding: 10px;
+    
+                    }
+                }
+            }
+    
+        .btn_menu{
+            display:none;
+    }
+}
+
+/*SOBREMI-index*/
+.sobremi{
+    display: flex;
+    flex-direction: column;
+
+    a{
+        margin-bottom: 30px;;
+    }
+
+    p{
+        padding: 20px;
+    }
+}
+
+/*SECTION-BOTTOM*/
+#bottom{
+    .row{
+        display: flex;
+        justify-content: space-between;
+
+        .col-md-2{
+            img{
+                display: inline-block;
+                height: 100px;
+                margin-left: 40px;
+                
+            }
+        }
+
+        .col-md-10{
+            margin-right: 10px;
+            margin-top: 10px;
+
+            ul{
+                list-style: none;
+                padding: 10px;
+
+                li{
+                    padding: 10px
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+
+}
+
+/*TRABAJOS*/
+.trabajos{
+    text-align: center;
+    background-color:lavenderblush;
+
+    h2{
+        text-transform: uppercase;
+        padding: 20px;
+        letter-spacing: 1px;
+    }
+
+    p{
+        padding: 20px;;
+    }
+    
+    .variedad{
+        display: grid;
+        grid-template-columns: 163px 163px;
+        justify-content: space-between;
+        padding: 90px;
+    }
+    
+    a{
+        margin-bottom: 40px;
+    }
+}
+
+/*INFORMACION*/
+.informacion{
+    iframe{
+        width: auto;
+    }
+}
+
+/*SECTION-BOTTOM*/
+#bottom{
+    .row{
+        display: flex;
+        justify-content: space-between;
+
+        .col-md-2{
+            img{
+                display: inline-block;
+                height: 100px;
+                margin-left: 15px;
+                
+            }
+        }
+
+        .col-md-10{
+            margin-right: 30px;
+            margin-top: 10px;
+
+            ul{
+                list-style: none;
+                padding: 35px;
+
+                li{
+                    padding: 5px
+                }
+
+            }
+        }
+    }
+
+}
+
+/*FOOTER*/
+#footer{
+    height: 40px;
+    font-size: 8px;
+}
+
+
+
+////****SOBREMI****////
+/*PRESENTACION*/
+.presentacion{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;      
+}
+ 
+/*PILARES*/
+.pilares{
+        .lista{
+            ul{
+                display: inline-block;
+                list-style: none;
+                
+                
+                li{
+                    padding: 15px;
+                }
+            }
+        }
+
+}
+
+/*REDES SOCIALES*/
+.redes{
+
+    height: 1000px;
+
+
+        .redes_top{
+            h2{
+                font-weight: bold;
+            }
+        }
+
+        .redes_bottom{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 20px;;
+                
+                .red{
+                    padding: 20px;
+                    
+                        img{
+                            height: 200px;
+                        }
+                }
+            
+        }
+} 
+
+
+////****PORTFOLIO****////
+.titulo-proyectos{
+    .proyectos{
+        display: grid;
+        grid-template-columns: 220px 220px;
+    
+        img{
+            width: 220px;
+            height: 300px;
+
+        }
+    }
+}
+
+
+////****CONTACTO****////
+/*FORMULARIO-SECTION*/
+.formulario{
+    height: 1250px;
+}
+/*IFRAME*/
+.map{
+    margin-top: 50px;
+
+        iframe{
+            width: 441px;
+            height: 450px;
+            padding: 20px;
+        }
+}
+
+}
+
+/*media para section bottom*/
+@media only screen and (min-width: 481px) and (max-width: 760px){
+/*SECTION-BOTTOM*/
+#bottom{
+    .row{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 40px;
+
+        .col-md-2{
+            img{
+                display: inline-block;
+                align-items: center;
+                height: 80px;
+                padding-right: 60px;   
+            }
+            ul{
+                padding-left: 20px;
+                font-size: 12px;
+                
+                li{
+                    padding:5px;
+                }
+            }
+        }
+
+
+    }
+
+}
+}
+
+
+@media only screen and (min-width: 761px) and (max-width: 1200px){
+/*SECTION-BOTTOM*/
+#bottom{
+    height: 320px;
+    .row{
+        .col-md-2{
+            img{
+                margin-top: 70px;
+                margin-left: 20px;
+                
+            }
+        }
+
+        .col-md-10{
+            margin-top: 80px;
+            margin-right: 10px;
+            ul{
+                padding: 30px;
+            }
+        }
+    }
+
+}
+
+////****SOBREMI****////
+/*REDES SOCIALES*/
+.redes{
+    background-color: lavenderblush;
+    height: 640px;
+    margin: auto;
+    
+        .redes_bottom{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+}
+
+////****PORTFOLIO****////
+
+.titulo-proyectos{
+    height: 1650px;
+    
+    
+        h2{
+            padding: 40px;
+            font-size: 40px;
+        }
+
+        p{  
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+    .proyectos{
+        display: grid;
+        padding: 20px;
+        grid-template-columns: 300px 300px;
+        grid-template-rows: auto;
+        justify-content: space-around;
+
+        img{
+            width: 300px;
+            height: 380px;
+            padding: 10px;
+        }
+    }
+
+    a{
+        padding: 20px;  
+    }
+}
+
+////****CONTACTO****////
+.formulario{
+    height: 100vh;
+    background-color: lavenderblush;
+    text-align: center;
+
+        h2{
+            padding: 40px;
+            text-transform: uppercase;
+        }
+
+        .form{
+            width: 681px;
+}
+
+.map{
+    margin-top: 80px;
+
+        iframe{
+            width: 721px;
+            height: 400px;
+            padding: 20px;
+        }
+}
+
+}
+}
+
+@media only screen and (min-width: 1200px){
+/*FONTS*/
+h2{
+    font-size: 40px;
+}
+
+////*****INDEX****////
+/*NAVBAR*/
+.menu{
+    height: 80px;
+    
+
+    .menu_items{
+        display: flex;
+        list-style: none;
+        margin-right: 30px;
+
+        li{
+            border-radius: 3px;
+            margin: 0 5px;
+
+            a{
+                
+                font-size: 20px;
+                
+            }
+        }
+    }  
+}
+
+/*SOBREMI*/
+.sobremi{
+    img{
+
+        height: 700px;
+    }
+
+    h2{ 
+        padding-top: 165px;
+        font-size: 40px;
+    }
+
+    .boton{
+        padding: 10px;
+    }
+}
+
+/*BANNER CONTACTAME*/
+.contactame{
+    .contactame_info{
+        height: 130px;
+        width: 700px;
+    }
+}
+
+/*INFORMACION*/
+.informacion{
+    background-color: lavenderblush;
+    padding: 20px;
+    text-align: center;
+    iframe{
+        width: 800px;
+        height: 500px;
+    }
+}
+
+
+////****PAGE: SOBREMI****////
+/*PRESENTACION*/
+.presentacion{
+    display: flex;
+    padding: 20px;
+
+            img{
+                height: 700px;
+                margin-right: 20px;
+                padding: 20px;
+            }
+
+            h2{
+                font-size: 35px;
+                text-align: center;
+                padding: 60px;
+            }
+
+            p{
+                text-align: center;
+                padding-top: 60px;
+                font-size: 20px;
+                margin: 10px
+            }
+          
+}
+
+/*REDES SOCIALES*/
+.redes{
+    background-color: lavenderblush;
+    height: 500px;
+    text-align: center;
+    padding: 60px 20px;
+
+        .redes_top{
+            h2{
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .redes_bottom{
+                .red{
+                    padding: 10px;
+                    
+                        img{
+                            height: 200px;
+
+
+                            &:hover{
+                                transform: scale(1.3);
+                            }
+                        }
+                }
+            
+        }
+}
+
+
+////****PORTFOLIO****////
+/*GRID-PROYECTOS*/
+.titulo-proyectos{
+    background-color: lavenderblush;
+    text-align: center;
+    height: 1200px;
+    color: black;
+    
+        h2{
+            padding: 40px;
+            font-size: 40px;
+        }
+
+        p{
+            padding: 20px;
+        }
+
+    .proyectos{
+        display: grid;
+        padding: 40px;
+        grid-template-columns: 280px 280px 280px;
+        grid-template-rows: auto;
+        justify-content: space-around;
+
+        img{
+            width: 270px;
+            height: 350px;
+            padding: 20px;
+        }
+
+        a{
+       
+            padding: 20px;
+       
+        }
+    }
+
+}
+
+
+
+////****PAGE: CONTACTO****////
+.banner{
+    background: url(./images/hero/contactofondo.jfif);
+    background-size: cover;
+    margin: auto;
+    text-align: center;
+    padding: 80px;
+    color: white;
+
+        h1{
+            margin-top: 80px;;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 60px;
+        }   
+}
+////*FORMULARIO*////
+.formulario{
+    height: 100vh;
+    background-color: lavenderblush;
+    text-align: center;
+
+        h2{
+            padding: 40px;
+            text-transform: uppercase;
+        }
+
+        .form{
+            width: 800px;
+
+                h3{
+                    font-size: 40px;
+                    
+                }
+                textarea{
+                    height: 200px;
+                }
+        }
+
+       ////****PAGE: CONTACTO****////
+.banner{
+    background: url(./images/hero/contactofondo.jfif);
+    background-size: cover;
+    margin: auto;
+    text-align: center;
+    padding: 80px;
+    color: white;
+
+        h1{
+            margin-top: 80px;;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 60px;
+        }   
+}
+/*FORMULARIO-container*/
+.formulario{
+    height: 100vh;
+    background-color: lavenderblush;
+    text-align: center;
+
+        h2{
+            padding: 40px;
+            text-transform: uppercase;
+        }
+
+        .form{
+            width: 450px;
+            margin: auto;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            border-radius: 6px;
+
+                h3{
+                    color: white;
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
+
+                input, textarea{
+                    width: 100%;
+                    margin-bottom: 20px;
+                    padding: 7px;
+                    box-sizing: border-box;
+                    font-size: 18px;
+                }
+
+                textarea{
+                    height: 100px;
+                }
+        }
+
+        
+
+
+
+}
+
+/*MAPA*/
+.map{
+    margin-top: 80px;
+
+        iframe{
+            width: 1000px;
+            height: 300px;
+            padding: 20px;
+        }
+}
+}
+
+
+
+}
